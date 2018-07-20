@@ -1,0 +1,247 @@
+[
+  {
+    "keyword": "Funcionalidade",
+    "name": "Realizar o Login na aplicação",
+    "line": 3,
+    "id": "realizar-o-login-na-aplicação",
+    "tags": [
+      {
+        "name": "@LoginAplicacao",
+        "line": 2
+      }
+    ],
+    "uri": "features/01 - LoginAplicacao.feature",
+    "elements": [
+      {
+        "id": "realizar-o-login-na-aplicação;login-com-sucesso",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Login com sucesso",
+        "tags": [
+          {
+            "name": "@LoginAplicacao",
+            "line": 2
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 6,
+            "name": "o endereço da apĺicação",
+            "match": {
+              "location": "build/stepdefinitions/LoginAplicacao_steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 7,
+            "name": "clicar no botão \"Entre\"",
+            "match": {
+              "location": "build/stepdefinitions/LoginAplicacao_steps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1426000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 8,
+            "name": "o sistema deve apresentar o Painel",
+            "match": {
+              "location": "build/stepdefinitions/LoginAplicacao_steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "build/support/hooks.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Funcionalidade",
+    "name": "Cadastrar um novo anunciante no sistema",
+    "line": 4,
+    "id": "cadastrar-um-novo-anunciante-no-sistema",
+    "tags": [
+      {
+        "name": "@CadastroAnunciante",
+        "line": 2
+      }
+    ],
+    "uri": "features/02 - CadastroAnunciante.feature",
+    "elements": [
+      {
+        "id": "cadastrar-um-novo-anunciante-no-sistema;cadastrar-um-novo-anunciante",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Cadastrar um novo anunciante",
+        "tags": [
+          {
+            "name": "@CadastroAnunciante",
+            "line": 2
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 7,
+            "name": "o Painel inicial",
+            "match": {
+              "location": "build/stepdefinitions/CadastroAnunciante_steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 8,
+            "name": "clicar na opção \"Anunciantes\"",
+            "match": {
+              "location": "build/stepdefinitions/CadastroAnunciante_steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3129000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 9,
+            "name": "o sistema redireciona para a tela de Contas",
+            "match": {
+              "location": "build/stepdefinitions/CadastroAnunciante_steps.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "quando clicar para adicionar um novo anunciante",
+            "match": {
+              "location": "build/stepdefinitions/CadastroAnunciante_steps.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 560000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 11,
+            "name": "o sistema abre a tela \"Adicionar novo Anunciante\"",
+            "match": {
+              "location": "build/stepdefinitions/CadastroAnunciante_steps.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 12,
+            "name": "quando eu preencher os campos do cadastro",
+            "match": {
+              "location": "build/stepdefinitions/CadastroAnunciante_steps.js:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 226000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 13,
+            "name": "clicar em \"Salvar\"",
+            "match": {
+              "location": "build/stepdefinitions/CadastroAnunciante_steps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3299000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 14,
+            "name": "o sistema emite a mensagem \"Conta adicionada com sucesso!\"",
+            "match": {
+              "location": "build/stepdefinitions/CadastroAnunciante_steps.js:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 39000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "build/support/hooks.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:25"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
