@@ -13,6 +13,8 @@ const {Given, When, Then} = require("cucumber")
 const painel: Painel = new Painel();
 const anunciante: Anunciante = new Anunciante();
 const scr = new Screeshot();
+let firstName: string;
+let lastName: string;
 
 Given('o Painel inicial', async () => {
     let label:string = await painel.btnPainel.getText();
@@ -21,7 +23,7 @@ Given('o Painel inicial', async () => {
 
 
 When('clicar na opção {string}', async (string) => {
-  await painel.contas.click();
+    await painel.contas.click();
 });
 
 
@@ -44,9 +46,14 @@ Then('o sistema abre a tela {string}', async (string) => {
 
 
 Then('quando eu preencher os campos do cadastro', async () => {
+     firstName =  faker.name.firstName();
+     lastName =  faker.name.lastName();
     await anunciante.campoEmail.sendKeys(faker.internet.email());
-    await anunciante.campoNome.sendKeys(faker.name.firstName());
-    await anunciante.campoSobrenome.sendKeys(faker.name.lastName());
+    await anunciante.campoNome.sendKeys(firstName);
+    await anunciante.campoSobrenome.sendKeys(lastName);
+    browser.takeScreenshot().then(function(png){
+        scr.writeScreenShot(png,'images/CamposPreenchidos.png')
+    })
 });
 
 
@@ -62,4 +69,25 @@ Then('o sistema emite a mensagem {string}', async (string) => {
         scr.writeScreenShot(png, 'images/Sucesso.png');
     });
 
+});
+
+Given('a tela de consulta de contas de anunciantes', async () => {
+    await anunciante.menuContasAnunciantes.click();
+
+});
+
+
+When('digitar o nome do anunciante cadastrado', async () => {
+    anunciante.campoPesquisa.sendKeys(firstName)
+});
+
+When('clicar no botão Buscar', async () => {
+    anunciante.btnBuscar.click();
+});
+
+Then('o cadastro do anunciante deve ser exibido na listagem', async () => {
+       // await anunciante.primeiroRegistro.click();
+        browser.takeScreenshot().then(function(png){
+            scr.writeScreenShot(png,'images/Consulta.png')
+        })
 });

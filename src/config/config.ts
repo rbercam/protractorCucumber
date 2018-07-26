@@ -33,7 +33,7 @@ export const config: Config = {
         format: "json:./reports/json/cucumber_report.json",
         require: ["../../build/stepdefinitions/*.js", "../../build/support/*.js"],
         strict: true,
-        tags: "@LoginAplicacao or @CadastroAnunciante",
+        tags: "@LoginAplicacao or @CadastroAnunciante or @ConsultaAnunciante",
     },
 
     onComplete: () => {

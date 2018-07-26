@@ -9,11 +9,11 @@ BeforeAll({timeout: 4000 * 40000}, async () => {
 });
 
 After(async function(scenario) {
-    if (scenario.result.status === Status.FAILED) {
+    //if (scenario.result.status === Status.FAILED) {
         // screenShot is a base-64 encoded PNG
          const screenShot = await browser.takeScreenshot();
          this.attach(screenShot, "image/png");
-    }
+    //}
 });
 
 AfterAll({timeout: 100 * 1000}, async () => {
