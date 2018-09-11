@@ -15,6 +15,7 @@ const anunciante: Anunciante = new Anunciante();
 const scr = new Screeshot();
 let firstName: string;
 let lastName: string;
+let email: string;
 
 Given('o Painel inicial', async () => {
     let label:string = await painel.btnPainel.getText();
@@ -48,12 +49,10 @@ Then('o sistema abre a tela {string}', async (string) => {
 Then('quando eu preencher os campos do cadastro', async () => {
      firstName =  faker.name.firstName();
      lastName =  faker.name.lastName();
-    await anunciante.campoEmail.sendKeys(faker.internet.email());
+     email = `${firstName}.${lastName}@email.com`
+    await anunciante.campoEmail.sendKeys(email.toLocaleLowerCase());
     await anunciante.campoNome.sendKeys(firstName);
     await anunciante.campoSobrenome.sendKeys(lastName);
-    browser.takeScreenshot().then(function(png){
-        scr.writeScreenShot(png,'images/CamposPreenchidos.png')
-    })
 });
 
 
@@ -65,10 +64,6 @@ Then('clicar em {string}', async (string) => {
 Then('o sistema emite a mensagem {string}', async (string) => {
     let msg: string = await anunciante.msgSucesso.getText();
     expect(msg).to.eq(string);
-    browser.takeScreenshot().then(function (png) {
-        scr.writeScreenShot(png, 'images/Sucesso.png');
-    });
-
 });
 
 Given('a tela de consulta de contas de anunciantes', async () => {
@@ -78,16 +73,14 @@ Given('a tela de consulta de contas de anunciantes', async () => {
 
 
 When('digitar o nome do anunciante cadastrado', async () => {
-    anunciante.campoPesquisa.sendKeys(firstName)
+    await anunciante.campoPesquisa.sendKeys(firstName)
+    await anunciante.campoPesquisa.submit();
 });
 
 When('clicar no botão Buscar', async () => {
-    anunciante.btnBuscar.click();
+    await anunciante.btnBuscar.click();
 });
 
 Then('o cadastro do anunciante deve ser exibido na listagem', async () => {
-       // await anunciante.primeiroRegistro.click();
-        browser.takeScreenshot().then(function(png){
-            scr.writeScreenShot(png,'images/Consulta.png')
-        })
+       await anunciante.primeiroRegistro.click();
 });

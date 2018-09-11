@@ -28,8 +28,8 @@ export class Anunciante {
         this.labelAdicionar = element(by.css('body > main > form > section.row.heading > div > div > h1'))
         this.msgSucesso = element(by.css('body > main > form > div > h4'))
         this.menuContasAnunciantes = element(by.css('#sidebar > div > ul > li.active > a'))
-        this.campoPesquisa = element(by.css('#view-content-list > div.content-control > div > div.col-md-4.col-sm-8.col-xs-6.control-search > div > form > div > div > input'))
+        this.campoPesquisa = element(by.name('search_username'))
         this.btnBuscar = element(by.css('#view-content-list > div.content-control > div > div.col-md-4.col-sm-8.col-xs-6.control-search > div > form > div > div > div > button > span'))
-        this.primeiroRegistro = element(by.css('#view-content-list > div.content-full > div.list-content > section > ul > li > div.item > p:nth-child(2)'))
+        this.primeiroRegistro = element(by.xpath('//*[@id="view-content-list"]/div[2]/div[1]/section/ul/li[1]/div[2]'))
     }
 }
