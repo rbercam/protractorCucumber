@@ -3,3 +3,5 @@ build/
 artifacts/
 *.js
 .vscode
+reports/json/*.json
+reports/json/json-output-folder/*.json
